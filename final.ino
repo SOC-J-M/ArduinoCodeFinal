@@ -26,12 +26,12 @@ String statusCode = "NORMAL";             // status code
 String reportingNode = "Arduino_1";       // reporting node
 String cycleTime = "0";                   // cycle time
 
-int counterPin = 5;                       // part counter
+int counterPin = 4;                       // part counter
 
 // **UPDATE THESE VARIABLES**
-const char ssid[] = "SpectrumSetup-7D";   // WiFi network
-const char pass[] = "manygate969";        // password, if open network you can leave blank
-const char serverIP[] = "192.168.1.178";  // ip of api server
+const char ssid[] = "";   // WiFi network
+const char pass[] = "";        // password, if open network you can leave blank
+const char serverIP[] = "192.168.1.177";  // ip of api server
 int serverPort = 5001;                    // port of api server
 
 // initialize WiFi client
@@ -100,7 +100,6 @@ void loop() {
     if ((currTime - lastCounterTime) > debounceDelay) { // check for debounce
       currCount++;
       lastCounterTime = currTime;
-      Serial.println(currCount);
     }
   }
 }
